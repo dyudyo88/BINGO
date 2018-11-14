@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 4  
+#define N 5
+#define UNOVERLAPED 0
+#define OVERLAPED 1
+
 
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
@@ -17,15 +20,17 @@ int main(void)
    print_bingo(arr);         //빙고판 출력
 
    return 0;
+   
 }
 
 
 
 void initiate_bingo(int arr[N][N])
 {
-   int row;
-   int col;
-    
+    int row;
+    int col;
+	int i,j;
+	
    srand((unsigned int)time(NULL));   //난수 초기화
    
 
@@ -36,6 +41,22 @@ void initiate_bingo(int arr[N][N])
         	arr[row][col] = 1 + (rand() % ((N)*(N)));   // 1 ~ NxN 사이의 난수생성과 입력 
       	}
    	}
+   	
+   	for(i=0; i<N; i++)
+	{	
+		for(j=0; j<N; j++)
+		{ 	
+			do
+			{
+				if((i==row)&&(j==col)) 	 
+				return UNOVERLAPED;
+				else if(arr[i][j]==arr[row][col])
+				return OVERLAPED;
+			}while(j=(N-1));
+		}
+	}
+   	
+   	
 }
 
 void print_bingo(int arr[N][N])
