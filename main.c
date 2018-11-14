@@ -9,16 +9,17 @@
 
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
-
+int get_number_byMe(int num);
 
 int main(void)
 {
-   printf("START BINGO GAME\n");
-   int arr[N][N];    	  	 //배열 선언
-
-   initiate_bingo(arr);     //빙고판 생성 
-   initiate_bingo(arr); 
-   print_bingo(arr);         //빙고판 출력
+    printf("START BINGO GAME\n");
+    int arr[N][N];    	  	 //배열 선언
+	int num; //입력받을 숫자 
+    initiate_bingo(arr);     //빙고판 생성 
+    initiate_bingo(arr); 
+    print_bingo(arr);         //빙고판 출력
+    get_number_by_Me(num); 	//user의 번호 입력받기 
 
    return 0;
    
@@ -74,3 +75,27 @@ void print_bingo(int arr[N][N])
       printf("\n"); //가로줄 다 쓰면 아랫줄로 이동                     
    }
 }
+
+int get_number_by_Me(int num)
+{
+	int try=0;
+	do{
+	if(try==0)
+	{
+		printf("1~%d사이의 숫자입력 : ",N*N);
+		scanf("%d",&num);
+		
+		if(num<=1||num>=N*N)
+		{
+			try++;
+		}
+	}
+	else if(try>=1);
+	{
+		printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요: ",N*N);
+		scanf("%d",&num); 
+	}
+	}while(num<=1||num>N*N);	
+ } 
+
+
