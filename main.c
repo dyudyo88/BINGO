@@ -16,7 +16,8 @@ int main(void)
    printf("START BINGO GAME\n");
    int arr[N][N];    	  	 //배열 선언
 
-   initiate_bingo(arr);      //빙고판 생성  
+   initiate_bingo(arr);     //빙고판 생성 
+   initiate_bingo(arr); 
    print_bingo(arr);         //빙고판 출력
 
    return 0;
@@ -48,9 +49,9 @@ void initiate_bingo(int arr[N][N])
 		{ 	
 			do
 			{
-				if((i==row)&&(j==col)) 	 
+				if((i==row)&&(j==col)) 	 //자기자신이면 통과하기  
 				return UNOVERLAPED;
-				else if(arr[i][j]==arr[row][col])
+				else if(arr[i][j]==arr[row][col]) //숫자 겹치면 되돌아가기 
 				return OVERLAPED;
 			}while(j=(N-1));
 		}
