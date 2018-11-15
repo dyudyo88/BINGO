@@ -11,18 +11,11 @@ int arr2[N][N];
 int row, col;
 int num;
 
-
-
-
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
 int check(int arr[N][N], int row, int col);
 int get_number_byMe(int num);
 int get_number_byCom(int num); 
-
-
-
-
 
 
 
