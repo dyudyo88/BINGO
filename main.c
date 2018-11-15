@@ -17,6 +17,7 @@ int check(int arr[N][N], int row, int col);
 int get_number_byMe(int num);
 int get_number_byCom(int num);
 int process_bingo(int arr[N][N],int num);
+int count_bingo(int arr[N][N]);
 
 
 
@@ -44,7 +45,8 @@ int main(void)
 	process_bingo(arr1,num);	//컴퓨터 선택번호 지우기  
 	process_bingo(arr2,num);
 	
-	
+	count_bingo(arr1);
+	count_bingo(arr2);
 	
 	
    
