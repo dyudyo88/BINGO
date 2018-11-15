@@ -22,8 +22,8 @@ int count_bingo(int arr[N][N])
 	
 	for(i=0;i<N;i++)
 	{
-		sum=0; //초기화
-		
+		sum=0;	
+	
 		for(j=0;j<N;j++)
 		{
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
@@ -42,7 +42,7 @@ int count_bingo(int arr[N][N])
 	
 	for(j=0;j<N;j++)
 	{
-		sum=0; //초기화
+		sum=0;
 		
 		for(i=0;i<N;i++)
 		{
@@ -87,4 +87,7 @@ int count_bingo(int arr[N][N])
 	}
 	
 	return 0;
+
 }
+
+

@@ -36,17 +36,23 @@ int main(void)
     print_bingo(arr2); 		//컴퓨터 빙고판인데 지우기  
     
     //do~while 구문 만들어서 M빙고 될 때까지 돌리기
-	 
-	get_number_byMe(num);		//사용자 번호선택  
-	process_bingo(arr1,num);	//사용자 선택번호 지우기	 
-	process_bingo(arr2,num);	
 	
-	get_number_byCom(num);		//컴퓨터 번호선택	 
-	process_bingo(arr1,num);	//컴퓨터 선택번호 지우기  
-	process_bingo(arr2,num);
+	do
+	{
+		get_number_byMe(num);		//사용자 번호선택  
+		process_bingo(arr1,num);	//사용자 선택번호 지우기	 
+		process_bingo(arr2,num);	
 	
-	count_bingo(arr1);
-	count_bingo(arr2);
+		get_number_byCom(num);		//컴퓨터 번호선택	 
+		process_bingo(arr1,num);	//컴퓨터 선택번호 지우기  
+		process_bingo(arr2,num);
+	
+		count_bingo(arr1);
+		count_bingo(arr2);
+	
+	}while();
+	
+	
 	
 	
    
