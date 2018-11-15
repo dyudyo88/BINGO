@@ -31,15 +31,60 @@ int count_bingo(int arr[N][N])
 			if(sum==0)
 			{
 				return 1;
-			 } 
+			} 
 		} 
 		 
 	}
 	
 	
 	
+	//2.가로줄 빙고 확인하기  
 	
+	for(j=0;j<N;j++)
+	{
+		sum=0; //초기화
+		
+		for(i=0;i<N;i++)
+		{
+			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
+			
+			if(sum==0)
+			{
+				return 1;
+			} 
+		} 
+		 
+	}
 	
+	//3.대각선 빙고 확인하기  
 	
+	for(i=0;i<N;i++)
+	{
+		sum=0; //초기화
+		
+		sum+=arr[i][i]; //최종 sum이 0이면 빙고 
+			
+			if(sum==0)
+			{
+				return 1;
+			 } 
+	} 
+		 
+
 	
+	for(i=0;i<N;i++)
+	{
+		sum=0; //초기화
+		
+		sum+=arr[N-i][i]; //최종 sum이 0이면 빙고 
+			
+			if(sum==0)
+			{
+				return 1;
+			 } 
+		 
+		 
+	}
+	
+	return 0;
 }
