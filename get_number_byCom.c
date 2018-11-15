@@ -10,6 +10,7 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
+ 
 
 
 
@@ -34,7 +35,7 @@ int get_number_byCom(int num)
 						}
 						else
 						{
-							printf("컴퓨터가 %d를 입력했습니다.",num); 
+							printf("컴퓨터가 %d를 선택했습니다.",num); 
 							return flag=1; //그 전에 선택한  숫자가 아니면 빠져나옴.
 						
 						}
