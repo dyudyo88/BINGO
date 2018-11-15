@@ -35,7 +35,7 @@ int get_number_byCom(int num)
 						}
 						else
 						{
-							printf("컴퓨터가 %d를 선택했습니다.",num); 
+							printf("컴퓨터가 %d를 선택했습니다.\n",num); 
 							return flag=1; //그 전에 선택한  숫자가 아니면 빠져나옴.
 						
 						}

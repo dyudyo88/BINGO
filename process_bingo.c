@@ -16,17 +16,30 @@ int num;
 int process_bingo(int arr[N][N],int num) 
 {
 	int i,j;
+	int flag;
+	int get_number_byCom(int num); //num는 입력받은 거니까 여기에다가 선언??? 
 	
-	for(i=0;i<N;i++)
-	{
-		for(j=0;j<N;j++)
+	while(1)
+	{	for(i=0;i<N;i++)
 		{
-			if(arr[i][j]==num)
+			for(j=0;j<N;j++)
 			{
-				arr[i][j]==-1; 
+				if(arr[i][j]==num)
+				{
+					arr1[i][j]==0;
+					arr2[i][j]==0;
+					
+					return flag=0;
+				}
+				else
+				{
+					return flag=1;
+				}
 			}
 		}
+		break;
 	}
+
 
 }
 

@@ -87,6 +87,8 @@ int count_bingo(int arr[N][N])
 	}
 	
 	return 0;
+	
+
 
 }
 

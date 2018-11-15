@@ -10,6 +10,7 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
+int try;
 
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
@@ -37,7 +38,7 @@ int main(void)
     
     //do~while 구문 만들어서 M빙고 될 때까지 돌리기
 	
-	do
+	while(1)
 	{
 		get_number_byMe(num);		//사용자 번호선택  
 		process_bingo(arr1,num);	//사용자 선택번호 지우기	 
@@ -50,7 +51,7 @@ int main(void)
 		count_bingo(arr1);
 		count_bingo(arr2);
 	
-	}while();
+	}
 	
 	
 	
