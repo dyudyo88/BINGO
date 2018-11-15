@@ -3,6 +3,7 @@
 #include <time.h>
 
 #define N 5   // NxN bingo game
+#define M 3 
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -10,6 +11,8 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
+
+
 
 //빙고판에 숫자 랜덤으로 배열할 때 겹치는지 안 겹치는지 확인해주는 함수  
 

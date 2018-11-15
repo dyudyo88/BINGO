@@ -3,6 +3,7 @@
 #include <time.h>
 
 #define N 5   // NxN bingo game
+#define M 3 
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -10,7 +11,6 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
-
 
 
 int get_number_byMe(int num)
@@ -22,7 +22,6 @@ int get_number_byMe(int num)
 	{	
 		printf("1~%d 사이의 숫자입력 : ",N*N);
 		scanf("%d",&num);
-		
 		
 		
 		if (num<1||num>N*N) 

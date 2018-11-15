@@ -3,6 +3,7 @@
 #include <time.h>
 
 #define N 5   // NxN bingo game
+#define M 3 
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -10,6 +11,8 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
+
+
 
 //선택된 숫자를 입력받아서 빙고판에 채우는 함수
  
@@ -29,11 +32,11 @@ int process_bingo(int arr[N][N],int num)
 					arr1[i][j]==0;
 					arr2[i][j]==0;
 					
-					return flag=0;
+					return flag=1;
 				}
 				else
 				{
-					return flag=1;
+					return flag=0;
 				}
 			}
 		}

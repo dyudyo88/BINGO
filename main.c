@@ -3,6 +3,7 @@
 #include <time.h>
 
 #define N 5   // NxN bingo game
+#define M 3   //M개의 빙고를 하면 게임을 이김  
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -10,7 +11,7 @@ int arr1[N][N];
 int arr2[N][N];
 int row, col;
 int num;
-int try;
+
 
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
@@ -27,7 +28,7 @@ int main(void)
 	
     printf("---------START BINGO GAME----------\n");
     int arr[N][N]={0};      //배열 선언 
-	
+	int bingo_number=0;
 
 	srand((unsigned int)time(NULL));   //난수
 	
@@ -38,7 +39,7 @@ int main(void)
     
     //do~while 구문 만들어서 M빙고 될 때까지 돌리기
 	
-	while(1)
+	do
 	{
 		get_number_byMe(num);		//사용자 번호선택  
 		process_bingo(arr1,num);	//사용자 선택번호 지우기	 
@@ -48,10 +49,10 @@ int main(void)
 		process_bingo(arr1,num);	//컴퓨터 선택번호 지우기  
 		process_bingo(arr2,num);
 	
-		count_bingo(arr1);
+		count_bingo(arr1);					
 		count_bingo(arr2);
-	
-	}
+		
+	}while(bingo_number>=M);
 	
 	
 	
