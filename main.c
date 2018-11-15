@@ -12,16 +12,15 @@ int check(int arr[N][N], int row, int col);
 int get_number_byMe(int num);
 int arr1[N][N];
 int arr2[N][N];
-int row;
-int col;
-
+int row, col;
+int num;
 
 int main(void)
 {	
 	
     printf("---------START BINGO GAME----------\n");
     int arr[N][N]={0};      //배열 선언 
-	int num;
+	
 
 	srand((unsigned int)time(NULL));   //난수
 	
@@ -59,6 +58,7 @@ void initiate_bingo(int arr[N][N])
    }
 }
 
+
 void print_bingo(int arr[N][N])
 {	
 	int row;
@@ -92,51 +92,56 @@ int check_overlap(int arr[N][N], int row, int col)
 
 int get_number_byMe(int num)
 {
-	int try=0;
 	int flag=0;
-	
-	do{
-		if(try==0)
+	int i,j;
+	do
+	{	
+		printf("1~%d 사이의 숫자입력 : ",N*N);
+		scanf("%d",&num);
+			
+		if (num<=1||num>=N*N) 
 		{	
-			printf("1~%d 사이의 숫자입력 : ",N*N);
-			scanf("%d",&num);
-			
-			
-			//else if(try>=1)
-			if (num<=1||num>=N*N) 
+			while(num<=1||num>=N*N)
 			{
 				printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요 : ",N*N);
-				//scanf("%d",&num);
+				scanf("%d",&num);     //여기에서도 중복확인을 해줘야하나?ㅠㅠ 하... 
 			}
-			else
-				{
-				
-				
-				while(1)
-				{
-					
-					//그전에 선택한 숫잔지 확인 
-					//flag = 1;
-				}
-		
-			}
-					
+			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-	}while(flag == 1);
+				
+		else //1~NxN 범위 사이의 숫자를 입력했을 때  
+		{	
+			while(1) //그 전에 선택한 숫자인지 확인->즉, 중복확인  
+				{
+					for(i=0;i<N;i++)
+					{
+						for(j=0;j<N;j++)
+						{
+							if(arr1[N][N]==num) //그 전에 입력한 숫자면 다시 반복  
+							{
+								printf("그 전에 선택한 숫자 입니다. 다시 입력하세요 :");
+								return flag;
+							}
+							else
+							{
+								flag=1; //그 전에 숫자가 아니면 빠져나옴. 
+							}
+							
+						}
+					}
+					
+				}
+		}
+					
 	
+	}while(flag == 1); //flag가 0이면 탈출 
 	
-
 }
 
-int get_number_byCom(int num)
+
+
+
+/*int get_number_byCom(int num)
 {
 	int i;
 	
@@ -148,4 +153,4 @@ int get_number_byCom(int num)
 	}
 	
 	
-}
+} */
