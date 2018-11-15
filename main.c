@@ -2,120 +2,150 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 5
-#define UNOVERLAPED 0
+#define N 5   // NxN bingo game
 #define OVERLAPED 1
-
+#define UNOVERLAPED 0
 
 void initiate_bingo(int arr[N][N]);
 void print_bingo(int arr[N][N]);
+int check(int arr[N][N], int row, int col);
 int get_number_byMe(int num);
-int get_number_by_Com(int cnum);
+int arr1[N][N];
+int arr2[N][N];
+int row;
+int col;
+
 
 int main(void)
-{
-    printf("START BINGO GAME\n");
-    int arr[N][N];    	  	 //배열 선언
-	int num; //사용자가 입력한 숫자 
-	int cnum; //컴퓨터가 고른 숫자
-	 
-    initiate_bingo(arr);     //빙고판 생성 
-    initiate_bingo(arr); 
-    print_bingo(arr);         //빙고판 출력
-    get_number_by_Me(num); 	//user의 번호 입력받기 
-	get_number_by_Com(num);
-   return 0;
+{	
+	
+    printf("---------START BINGO GAME----------\n");
+    int arr[N][N]={0};      //배열 선언 
+	int num;
+
+	srand((unsigned int)time(NULL));   //난수
+	
+    initiate_bingo(arr1);		//빙고판 생성
+	initiate_bingo(arr2);
+    print_bingo(arr1);         //빙고판 출력
+    print_bingo(arr2); 
+	get_number_byMe(num);
+	
+	//중복인지 확인해주기  
    
+    return 0;
 }
 
 
 
 void initiate_bingo(int arr[N][N])
 {
-    int row;
-    int col;
-	int i,j;
-	
-   srand((unsigned int)time(NULL));   //난수 초기화
-   
+    int check = 0;
+	int row;
+	int col;
+    
 
-	for(row=0; row<N; row++)	//NxN 배열에 넣기위한 반복문
-   	{
-	   for (col=0; col<N; col++)
-      	{
-        	arr[row][col] = 1 + (rand() % ((N)*(N)));   // 1 ~ NxN 사이의 난수생성과 입력 
-      	}
-   	}
-   	
-   	for(i=0; i<N; i++)
-	{	
-		for(j=0; j<N; j++)
-		{ 	
-			do
-			{
-				if((i==row)&&(j==col)) 	 //자기자신이면 통과하기  
-				return UNOVERLAPED;
-				else if(arr[i][j]==arr[row][col]) //숫자 겹치면 되돌아가기 
-				return OVERLAPED;
-			}while(j=(N-1));
-		}
-	}
-   	
-   	
-}
-
-void print_bingo(int arr[N][N])
-{   
-   int row;
-   int col;
-   
-   for (row=0; row<N; row++)
-   {
-      for (col=0; col<N; col++)
-     {
-        printf("%d\t", arr[row][col]);      //빙고판 출력
-     }
-      printf("\n"); //가로줄 다 쓰면 아랫줄로 이동                     
+	for(row=0; row<N; row++)                        //NxN 배열 반복문
+	{for (col=0; col<N; col++)
+		{
+        	while(1)
+			{ 	
+				arr[row][col] = 1 + (rand() % ((N)*(N)));   // 1 ~ NxN 난수 생성 및 대입
+            	check = check_overlap(arr,row,col);         // 중복 체크-> 중복있으면 1 , 중복없으면 0 
+            	if (!check)                           // 중복 없으면 무한루프 탈출 및 다음 배열로 넘어감
+               	break;
+         }
+      }
    }
 }
 
-int get_number_by_Me(int num)
+void print_bingo(int arr[N][N])
+{	
+	int row;
+	int col;
+	
+   for (row=0; row <N; row++)
+   {
+      for (col=0; col <N; col++)
+	  {
+        printf("%d\t", arr[row][col]);      //출력
+      }
+      printf("\n\n");                     //가로줄 다쓰면 줄내림
+   }
+   
+   printf("\n\n");
+}
+
+int check_overlap(int arr[N][N], int row, int col)
+{
+   int i, j;
+   for (i = 0; i <N; i++){
+      for (j = 0; j <N; j++){      
+         if ((i==row)&&(j==col)) //자기자신이면 지나치기	 
+            return UNOVERLAPED;
+         else if (arr[i][j] == arr[row][col]) //숫자 겹치면 다시 돌아가기  
+            return OVERLAPED;           
+      }
+   }
+}
+
+
+int get_number_byMe(int num)
 {
 	int try=0;
+	int flag=0;
+	
 	do{
-	if(try==0)
-	{
-		printf("1~%d사이의 숫자입력 : ",N*N);
-		scanf("%d",&num);
+		if(try==0)
+		{	
+			printf("1~%d 사이의 숫자입력 : ",N*N);
+			scanf("%d",&num);
+			
+			
+			//else if(try>=1)
+			if (num<=1||num>=N*N) 
+			{
+				printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요 : ",N*N);
+				//scanf("%d",&num);
+			}
+			else
+				{
+				
+				
+				while(1)
+				{
+					
+					//그전에 선택한 숫잔지 확인 
+					//flag = 1;
+				}
 		
-		if(num<=1||num>=N*N)
-		{
-			try++;
+			}
+					
 		}
-	}
-	else if(try>=1);
-	{
-		printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요: ",N*N);
-		scanf("%d",&num); 
-	}
-	}while(num<=1||num>N*N);	
- } 
+		
+		
+		
+		
+		
+		
+		
+		
+	}while(flag == 1);
+	
+	
 
-int get_number_by_Com(int cnum)
+}
+
+int get_number_byCom(int num)
 {
-	int cnum = 1 + (rand() % ((N)*(N)));
+	int i;
 	
-	if(cnum!=num)
-	{	
-		printf("컴퓨터가 숫자 %d 를 선택했습니다 : ",cnum);
-	}
-	
-	else
+	while(1)
 	{
-		printf("ERROR\N");
-		printf(""컴퓨터가 숫자 %d 를 선택했습니다 : ",cnum); 
+		         
+        if (!check)        // 중복 없으면 무한루프 탈출 및 다음 배열로 넘어감
+    	break;
 	}
 	
- } 
-
-
+	
+}
