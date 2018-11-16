@@ -31,35 +31,33 @@ int main(void)
     int arr[N][N]={0};      //배열 선언 
 	int bingo_number=0;
 	int num;
-	
 	srand((unsigned int)time(NULL));   //난수
 	
-    
-    
-    //do~while 구문 만들어서 M빙고 될 때까지 돌리기
 	
-	do
-	{	
-		initiate_bingo(arr1);		//사용자 빙고판 생성
-		initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
-   	 	print_bingo(arr1);         //사용자 빙고판 출력
-   		print_bingo(arr2); 		//컴퓨터 빙고판인데 지우기 
+	initiate_bingo(arr1);		//사용자 빙고판 생성
+	initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
+    print_bingo(arr1);         	//사용자 빙고판 출력 
+	print_bingo(arr2); 			//컴퓨터 빙고판 출력  
     
+    
+    while(1)
+	{	
 		num = get_number_byMe(num);		//사용자 번호선택  
-		process_bingo(num);	//사용자 선택번호 지우기	 
-		//process_bingo(arr2,num);	
+		process_bingo(num);				//선택번호 지우기	 
+	
 	
 		get_number_byCom(num);		//컴퓨터 번호선택	 
-		process_bingo(num);	//컴퓨터 선택번호 지우기  
-		//process_bingo(arr2,num);
+		process_bingo(num);			//컴퓨터 선택번호 지우기  
+		
 	
 		count_bingo(arr1);					
 		count_bingo(arr2);
 		
-			print_bingo(arr1);         //사용자 빙고판 출력
-   		print_bingo(arr2); 		//컴퓨터 빙고판인데 지우기 
+		print_bingo(arr1);  	     //사용자 빙고판 출력
+   		print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
+	
 		
-	}while(bingo_number>=M);
+	}
 	
 	
 	

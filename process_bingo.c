@@ -25,15 +25,13 @@ int process_bingo(int num)
 			for(j=0;j<N;j++)
 			{	
 			
-				if(arr1[i][j]==num) //작동확인 ->작동 안 함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				if(arr1[i][j]==num) 
 				{
-					printf("%i ", num);
-					arr1[i][j]=0;
+					arr1[i][j]=0; //선택한 숫자가 0으로 바뀜  
 				}
 				
-				if(arr2[i][j]==num) //작동확인 ->작동 안 함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				if(arr2[i][j]==num) 
 				{
-					printf("%i ", num);
 					arr2[i][j]=0;
 					
 				}
