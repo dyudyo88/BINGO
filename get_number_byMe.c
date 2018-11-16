@@ -7,21 +7,20 @@
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
-int arr1[N][N];
-int arr2[N][N];
+extern int arr1[N][N];
+extern int arr2[N][N];
 int row, col;
 int num;
 
 
 
 
-int get_number_byMe(int num)
+int get_number_byMe(void)
 {
 	int i,j;
 	int flag = 0;
+	int num;
 	
-	
-
 	do
 	{	
 	 /*	int * input_number;
@@ -36,20 +35,15 @@ int get_number_byMe(int num)
 		
 		if(num<1||num>N*N) //범위 밖의 숫자를 선택했을 때 
 		{	
-			do
-			{
-				printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요 : ",N*N);
-				scanf("%d",&num);
-			}while(num<1||num>N*N);
-			
+			printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요 : ",N*N);	
+			flag=1;	
 		}
-			
-			
-				
 		else //1~NxN 범위 사이의 숫자를 입력했을 때  
 		{	
-			while(1) //그 전에 선택한 숫자인지 확인
+		
+		//	while(1) //그 전에 선택한 숫자인지 확인
 				{
+					flag=1;
 					for(i=0;i<N;i++)
 					{
 						for(j=0;j<N;j++)
@@ -58,13 +52,10 @@ int get_number_byMe(int num)
 							if((arr1[i][j]==num) || (arr2[i][j]==num)) 
 							{	
 								printf("선택했던 숫자 입니다. 다시 입력하세요 :");
-								return flag=1;
+								flag=0;
+								break;
 							}
-							else
-							{	
-								return flag=0; //그 전에 숫자가 아니면 빠져나옴.//?? 
-							}
-							
+
 						}
 					}
 					
@@ -74,5 +65,7 @@ int get_number_byMe(int num)
 	}while(flag == 1); //flag가 0이면 탈출 
 
 	printf("\n");	
+	
+	return num;
 }
 

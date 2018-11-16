@@ -7,8 +7,8 @@
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
-int arr1[N][N];
-int arr2[N][N];
+extern int arr1[N][N];
+extern int arr2[N][N];
 int row, col;
 int num;
 
@@ -25,6 +25,8 @@ int count_bingo(int arr[N][N])
 	
 	//1.세로줄 빙고 확인하기  
 	
+	printf("d"); //작동확인
+	
 	for(i=0;i<N;i++)
 	{
 		sum=0;	
@@ -34,9 +36,8 @@ int count_bingo(int arr[N][N])
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
 			
 			if(sum==0)
-			{
+			{	printf("e");//작동확인 
 				bingo_number++;
-				return 1;
 			} 
 		} 
 		 
@@ -57,13 +58,12 @@ int count_bingo(int arr[N][N])
 			if(sum==0)
 			{
 				bingo_number++;
-				return 1;
 			} 
 		 
 		}
 	}
 	
-	//3.대각선 빙고 확인하기  
+	//3.대각선 빙고 확인  
 	
 	for(i=0;i<N;i++)
 	{
@@ -74,7 +74,6 @@ int count_bingo(int arr[N][N])
 			if(sum==0)
 			{
 				bingo_number++;
-				return 1;
 			 } 
 	} 
 		 
@@ -82,7 +81,6 @@ int count_bingo(int arr[N][N])
 	
 	for(i=0;i<N;i++)
 	{
-		
 		sum=0; //초기화
 		
 		sum+=arr[N-i][i]; //최종 sum이 0이면 빙고 
@@ -90,7 +88,6 @@ int count_bingo(int arr[N][N])
 			if(sum==0)
 			{	
 				bingo_number++;
-				return 1;
 			 } 
 		 
 		 

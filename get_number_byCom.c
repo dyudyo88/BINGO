@@ -7,8 +7,8 @@
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
-int arr1[N][N];
-int arr2[N][N];
+extern int arr1[N][N];
+extern int arr2[N][N];
 int row, col;
 int num;
 
