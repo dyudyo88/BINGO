@@ -13,6 +13,7 @@ int row, col;
 int num;
 
 
+
 int get_number_byCom(int num)
 {	
 	int i,j;
@@ -28,7 +29,7 @@ int get_number_byCom(int num)
 			for(j=0;j<N;j++)						
 			{
 			
-				if((arr1[N][N]==num) || (arr2[N][N]==num)) 
+				if((arr1[i][j]==num) || (arr2[i][j]==num) )
 				{
 					return 1; 
 				}
@@ -42,3 +43,5 @@ int get_number_byCom(int num)
 		}
 	}
 } 
+
+

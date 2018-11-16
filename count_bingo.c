@@ -15,11 +15,12 @@ int num;
 
 
 
-int count_bingo(int arr[N][N])
+
+int count_bingo(int bingonum,int arr[N][N])
 {
 	int i,j;
-	int sum;
-	int bingo_number=0; 
+	int sum=0;
+
 	
 								//숫자 선택을 하면 0으로  바뀌고 한 줄 빙고를 하면 sum=0 인것을 찾아야한다.
 	
@@ -29,15 +30,14 @@ int count_bingo(int arr[N][N])
 	
 	for(i=0;i<N;i++)
 	{
-		sum=0;	
-	
 		for(j=0;j<N;j++)
 		{
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{
-				bingo_number++;
+				bingonum++;
+			
 			} 
 		} 
 		 
@@ -49,15 +49,13 @@ int count_bingo(int arr[N][N])
 	
 	for(j=0;j<N;j++)
 	{
-		sum=0;
-		
 		for(i=0;i<N;i++)
 		{
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{
-				bingo_number++;
+				bingonum++;
 			} 
 		 
 		}
@@ -67,13 +65,11 @@ int count_bingo(int arr[N][N])
 	
 	for(i=0;i<N;i++)
 	{
-		sum=0; 
-		
 		sum+=arr[i][i]; //최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{
-				bingo_number++;
+				bingonum++;
 			 } 
 	} 
 		 
@@ -81,12 +77,11 @@ int count_bingo(int arr[N][N])
 	
 	for(i=0;i<N;i++)
 	{
-		sum=0; 
 		sum+=arr[N-i][i]; //최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{	
-				bingo_number++;
+				bingonum++;
 			 } 
 		 
 		 
