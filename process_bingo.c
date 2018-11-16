@@ -19,28 +19,32 @@ int num;
 int process_bingo(int arr[N][N],int num) 
 {
 	int i,j;
-	int flag;
+	int get_number_byMe(int num);
 	int get_number_byCom(int num); //num는 입력받은 거니까 여기에다가 선언??? 
+	
+
 	
 	while(1)
 	{	for(i=0;i<N;i++)
 		{
 			for(j=0;j<N;j++)
 			{
-				if(arr[i][j]==num)
+				if(arr[i][j]==num) 
 				{
+					printf("b");
 					arr1[i][j]==0;
 					arr2[i][j]==0;
 					
-					return flag=1;
+					
+					return 0;
 				}
 				else
 				{
-					return flag=0;
+					return 1;
 				}
 			}
 		}
-		break;
+		
 	}
 
 

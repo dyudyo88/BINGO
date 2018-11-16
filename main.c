@@ -10,7 +10,7 @@
 int arr1[N][N];
 int arr2[N][N];
 int row, col;
-int num;
+
 
 
 void initiate_bingo(int arr[N][N]);
@@ -29,7 +29,8 @@ int main(void)
     printf("---------START BINGO GAME----------\n");
     int arr[N][N]={0};      //배열 선언 
 	int bingo_number=0;
-
+	int num;
+	
 	srand((unsigned int)time(NULL));   //난수
 	
     

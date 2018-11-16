@@ -18,6 +18,7 @@ int num;
 
 void print_bingo(int arr[N][N])
 {	
+
 	
 	int row;
 	int col;
