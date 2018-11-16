@@ -13,6 +13,7 @@ int row, col;
 int num;
 
 
+
 int get_number_byMe(int num)
 {
 	int i,j;
@@ -24,13 +25,13 @@ int get_number_byMe(int num)
 		scanf("%d",&num);
 		
 		
-		if (num<1||num>N*N) 
+		if(num<1||num>N*N) //범위 밖의 숫자를 선택했을 때 
 		{	
-			while(num<1||num>N*N)
+			do
 			{
 				printf("1~%d 사이의 숫자를 입력해야합니다. 다시 입력하세요 : ",N*N);
 				scanf("%d",&num);
-			}
+			}while(num<1||num>N*N);
 			
 		}
 			
@@ -38,20 +39,20 @@ int get_number_byMe(int num)
 				
 		else //1~NxN 범위 사이의 숫자를 입력했을 때  
 		{	
-			while(1) //그 전에 선택한 숫자인지 확인->즉, 중복확인  
+			while(1) //그 전에 선택한 숫자인지 확인
 				{
 					for(i=0;i<N;i++)
 					{
 						for(j=0;j<N;j++)
 						{
-							if((arr1[i][j]==num)||arr2[i][j]==num) //그 전에 입력한 숫자면 다시 반복  
+							if((arr1[i][j]==0)||arr2[i][j]==0) //그 전에 입력한 숫자면 다시 반복  
 							{
 								printf("선택했던 숫자 입니다. 다시 입력하세요 :");
-								return flag = 1 ;
+								return flag;  //?
 							}
 							else
 							{		
-								return flag = 0; //그 전에 숫자가 아니면 빠져나옴. 
+								return flag=1; //그 전에 숫자가 아니면 빠져나옴.//?? 
 							}
 							
 						}

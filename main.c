@@ -32,15 +32,17 @@ int main(void)
 
 	srand((unsigned int)time(NULL));   //난수
 	
-    initiate_bingo(arr1);		//사용자 빙고판 생성
-	initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
-    print_bingo(arr1);         //사용자 빙고판 출력
-    print_bingo(arr2); 		//컴퓨터 빙고판인데 지우기  
+    
     
     //do~while 구문 만들어서 M빙고 될 때까지 돌리기
 	
 	do
-	{
+	{	
+		initiate_bingo(arr1);		//사용자 빙고판 생성
+		initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
+   	 	print_bingo(arr1);         //사용자 빙고판 출력
+   		print_bingo(arr2); 		//컴퓨터 빙고판인데 지우기 
+    
 		get_number_byMe(num);		//사용자 번호선택  
 		process_bingo(arr1,num);	//사용자 선택번호 지우기	 
 		process_bingo(arr2,num);	
