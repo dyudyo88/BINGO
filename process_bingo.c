@@ -29,7 +29,7 @@ int process_bingo(int num)
 					
 				}
 				
-				if(arr2[i][j]==cnum) //get number_byCom에서 입력받은 수  
+				if(arr2[i][j]==num) //get number_byCom에서 입력받은 수  
 				{
 					arr2[i][j]=0;
 				}
@@ -37,11 +37,9 @@ int process_bingo(int num)
 				if(arr1[i][j]==num) //get number_byMe 에서 입력받은수   
 				{
 					arr1[i][j]=0; //선택한 숫자가 0으로 바뀜  
-					
-					
 				}
 				
-				if(arr2[i][j]==cnum) //get number_byCom에서 입력받은 수  
+				if(arr2[i][j]==num) //get number_byCom에서 입력받은 수  
 				{
 					arr2[i][j]=0;
 					

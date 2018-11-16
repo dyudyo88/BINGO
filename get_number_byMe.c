@@ -11,6 +11,7 @@ extern int arr1[N][N];
 extern int arr2[N][N];
 int row, col;
 int num;
+int cnum;
 
 
 int get_number_byMe(void)
@@ -36,7 +37,7 @@ int get_number_byMe(void)
 			{
 				for(j=0;j<N;j++)
 				{	
-					if((arr1[i][j]==num) || (arr2[i][j]==cnum) )
+					if((arr1[i][j]==num) || (arr2[i][j]==num) )
 					{	
 						flag=0;
 						break;
@@ -54,7 +55,8 @@ int get_number_byMe(void)
 	}while(flag == 1); //flag°¡ 0ÀÌ¸é Å»Ãâ 
 
 	printf("\n");	
-	
 	return num;
+
+	
 }
 
