@@ -20,6 +20,7 @@ int get_number_byMe(int num);
 int get_number_byCom(int num);
 int process_bingo(int arr[N][N],int num);
 int count_bingo(int arr[N][N]);
+int stop_overlap_number(int arr[N][N],int row, int col);
 
 
 

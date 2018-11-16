@@ -20,9 +20,15 @@ int get_number_byMe(int num)
 	int i,j;
 	int flag = 0;
 	
+	
 
 	do
 	{	
+	 /*	int * input_number;
+		input_number=&num;       //stop_overlap_number에서 num를 불러주기 위해 포인터사용  
+	 */
+		
+		
 		printf("1~%d 사이의 숫자입력 : ",N*N);
 		scanf("%d",&num);
 		
@@ -47,11 +53,12 @@ int get_number_byMe(int num)
 					for(i=0;i<N;i++)
 					{
 						for(j=0;j<N;j++)
-						{
-							if((arr1[i][j]==0)||(arr2[i][j]==0)) //그 전에 입력한 숫자면 다시 반복  
-							{
+						{	
+							
+							if((arr1[i][j]==num) || (arr2[i][j]==num)) 
+							{	
 								printf("선택했던 숫자 입니다. 다시 입력하세요 :");
-								return flag=1;  //?
+								return flag=1;
 							}
 							else
 							{	
@@ -63,7 +70,6 @@ int get_number_byMe(int num)
 					
 				}
 		}
-					
 	
 	}while(flag == 1); //flag가 0이면 탈출 
 

@@ -17,6 +17,7 @@ int get_number_byCom(int num)
 {	
 	int i,j;
 	
+	
 	num = 1 + (rand() % ((N)*(N)));
 	
 		
@@ -26,7 +27,8 @@ int get_number_byCom(int num)
 		{
 			for(j=0;j<N;j++)						
 			{
-				if((arr1[i][j]==0)||(arr2[i][j]==0)) //그 전에 입력한 숫자면 다시 반복  
+			
+				if((arr1[N][N]==num) || (arr2[N][N]==num)) 
 				{
 					return 1; 
 				}

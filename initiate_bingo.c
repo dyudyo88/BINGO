@@ -33,3 +33,7 @@ void initiate_bingo(int arr[N][N])
       }
    }
 }
+
+
+
+
