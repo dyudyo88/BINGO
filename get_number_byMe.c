@@ -13,13 +13,10 @@ int row, col;
 int num;
 
 
-
-
 int get_number_byMe(void)
 {
 	int i,j;
 	int flag = 0;
-	
 	
 	do
 	{	
@@ -39,7 +36,7 @@ int get_number_byMe(void)
 			{
 				for(j=0;j<N;j++)
 				{	
-					if((arr1[i][j]==num) || (arr2[i][j]==num) )
+					if((arr1[i][j]==num) || (arr2[i][j]==cnum) )
 					{	
 						flag=0;
 						break;

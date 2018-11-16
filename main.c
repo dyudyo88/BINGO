@@ -45,7 +45,7 @@ int main(void)
 		num = get_number_byMe(num);
 		process_bingo(num);
 		
-		num = get_number_byCom(num);
+		get_number_byCom(num);
 		process_bingo(num);
 		
 		count_bingo(bingonum,arr1);
@@ -54,19 +54,11 @@ int main(void)
 		
 		print_bingo(arr1);  	     //사용자 빙고판 출력
    		print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
-	
-		if(bingonum>=M)
-		{
-			break;
-		}		
+		
 		
 	}
 	
-	
-	
-	
-	
-   
+ 
     return 0;
 }
 

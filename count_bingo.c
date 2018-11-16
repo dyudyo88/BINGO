@@ -21,8 +21,7 @@ int count_bingo(int bingonum,int arr[N][N])
 	int i,j;
 	int sum=0;
 
-	
-								//숫자 선택을 하면 0으로  바뀌고 한 줄 빙고를 하면 sum=0 인것을 찾아야한다.
+	//숫자 선택을 하면 0으로  바뀌고 한 줄 빙고를 하면 sum=0 인것을 찾아야한다.
 	
 	//1.세로줄 빙고 확인하기  
 	
@@ -37,12 +36,9 @@ int count_bingo(int bingonum,int arr[N][N])
 			if(sum==0)
 			{
 				bingonum++;
-			
 			} 
 		} 
-		 
 	}
-	
 	
 	
 	//2.가로줄 빙고 확인하기  
@@ -57,9 +53,9 @@ int count_bingo(int bingonum,int arr[N][N])
 			{
 				bingonum++;
 			} 
-		 
 		}
 	}
+	
 	
 	//3.대각선 빙고 확인  
 	
@@ -82,15 +78,8 @@ int count_bingo(int bingonum,int arr[N][N])
 			if(sum==0)
 			{	
 				bingonum++;
-			 } 
-		 
-		 
+			 }
 	}
 	
 	
 }
-	
-
-
-
-

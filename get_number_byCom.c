@@ -14,14 +14,11 @@ int num;
 
 
 
-int get_number_byCom(int num)
+int get_number_byCom(int cnum)
 {	
 	int i,j;
+	cnum = 1 + (rand() % ((N)*(N)));
 	
-	
-	num = 1 + (rand() % ((N)*(N)));
-	
-		
 	while(1) //중복확인  
 	{
 		for(i=0;i<N;i++)
@@ -29,7 +26,7 @@ int get_number_byCom(int num)
 			for(j=0;j<N;j++)						
 			{
 			
-				if((arr1[i][j]==num) || (arr2[i][j]==num) )
+				if((arr1[i][j]==num) || (arr2[i][j]==cnum) )
 				{
 					return 1; 
 				}
@@ -42,6 +39,8 @@ int get_number_byCom(int num)
 			}
 		}
 	}
+	
+	return cnum;
 } 
 
 

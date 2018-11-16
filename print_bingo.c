@@ -10,14 +10,8 @@
 int row, col;
 int num;
 
-
-
-
-
 void print_bingo(int arr[N][N])
 {	
-
-	
 	int row;
 	int col;
 	
@@ -31,7 +25,5 @@ void print_bingo(int arr[N][N])
    }
    
    printf("\n\n");
-   
-
 }
 
