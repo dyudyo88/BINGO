@@ -38,7 +38,5 @@ int get_number_byCom(void)
 
 	printf("\n");
 	return num;
-	
-
 }
 

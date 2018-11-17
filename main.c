@@ -30,28 +30,28 @@ int main(void)
 			print_bingo(arr1);  	   	//사용자 빙고판 출력
    			print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
 				
-			userbingonumber = count_bingo(arr1,bingonumber);			//사용자의 빙고 수 입력받기 
+			userbingonumber = count_bingo(arr1, bingonumber);			//사용자의 빙고 수 입력받기 
 			printf("사용자가 %d bingo 했습니다.\n", userbingonumber); 	//사용자의 빙고 수가 몇 인지 출력  
-			combingonumber = count_bingo(arr2,bingonumber);				//사용자의  빙고 수 입력받기 
+			combingonumber = count_bingo(arr2, bingonumber);				//사용자의  빙고 수 입력받기 
 			printf("컴퓨터가 %d bingo 했습니다.\n\n", combingonumber); 	//컴퓨터의 빙고 수가 몇 인지 출력  
 			
 			
 				
-			if(userbingonumber>=M) 								//사용자의 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			if(userbingonumber==M) 								//사용자의 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
 			{
 				printf("사용자가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
 				break; 
 			}
 			
-			else if(combingonumber>=M)							//컴퓨터 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			else if(combingonumber==M)							//컴퓨터 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
 			{
 				printf("컴퓨터가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
 				break; 
 			}
 			
-			else if(userbingonumber>=M&&combingonumber>=M)		//사용자와 컴퓨터의  빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			else if(userbingonumber==M && combingonumber==M )		//사용자와 컴퓨터의  빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
 			{
 				printf("비겼습니다.");
 				printf("%d번째에 비겼습니다.", turn);
