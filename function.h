@@ -9,8 +9,9 @@
 
 int arr1[N][N]; //사용자 빙고판 배열 
 int arr2[N][N]; //컴퓨터 빙고판 배열 
-int row, col;
-int num;
+int row, col;	//initiate함수에서 가로줄과 세로줄 변수 선언
+int i,j;    
+int num;		//빙고 숫자 입력 받을 변수 선언   
 
 
 void initiate_bingo(int arr[N][N]); 					//빙고테이블 초기에 만듦  
