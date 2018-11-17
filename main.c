@@ -3,7 +3,7 @@
 #include <time.h>
 
 #define N 4   // NxN bingo game
-#define M 2   //M개의 빙고를 하면 게임을 이김  
+#define M 1   //M개의 빙고를 하면 게임을 이김  
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -17,9 +17,9 @@ void initiate_bingo(int arr[N][N]); 					//빙고테이블 초기에 만듦
 void print_bingo(int arr[N][N]);						//빙고테이블의 현재 상황을 화면에 출력
 int check(int arr[N][N], int row, int col);				//빙고테이블에 숫자 랜덤으로 배치할 때 중복되는지 확인
 int get_number_byMe(int arr);							//사용자가 빙고번호 선택  
-int get_number_byCom(int num);					//컴퓨터가 빙고번호 선택  
+int get_number_byCom(int num);							//컴퓨터가 빙고번호 선택  
 int process_bingo(int num);								//선택된 숫자를 입력받아서 빙코테이블의 칸을 채움  
-//빙고된 가로,세로,대각선의 줄 수를 계산해서 반환 
+int count_bingo(int arr[N][N], int bingonum);							//빙고된 가로,세로,대각선의 줄 수를 계산해서 반환 
 
 
 
@@ -27,19 +27,22 @@ int process_bingo(int num);								//선택된 숫자를 입력받아서 빙코테이블의 칸을 
 int main(void)
 {	
 
-	printf("-----------START BINGO GAME-------------\n");
-    int arr[N][N]={0};      //배열 선언 및 초기화  
+	int arr[N][N]={0};      //배열 선언 및 초기화  
 	int num;
+	int userbingonum;		//사용자의 빙고 수
+	int combingonum;		//컴퓨터의 빙고수
 	int bingonum;
+	int turn;
+	 
 	srand((unsigned int)time(NULL));   //난수
 	
-	
+	printf("-----------START BINGO GAME-------------\n");
 	initiate_bingo(arr1);		//사용자 빙고판 생성
 	initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
     print_bingo(arr1);         	//사용자 빙고판 출력 
 	print_bingo(arr2); 			//컴퓨터 빙고판 출력  
     
-    	while(1)
+   	 while(1)
 		{
 			num = get_number_byMe(arr1);
 			process_bingo(num);
@@ -47,15 +50,29 @@ int main(void)
 			num = get_number_byCom(num);
 			printf("컴퓨터가 %d를 선택했습니다.\n",num);
 			process_bingo(num);
-		
-			count_bingo(bingonum,arr1);
-			count_bingo(bingonum,arr2);
-		
+			
+			turn++;
 		
 			print_bingo(arr1);  	     //사용자 빙고판 출력
    			print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
 				
+			userbingonum = count_bingo(arr1,bingonum);
+			combingonum = count_bingo(arr2,bingonum);	
+			
+			if(userbingonum>=M)
+			{
+				printf("사용자가 이겼습니다.");	
+				printf("%d번째에 승리했습니다",turn);
+				break; 
+			}
+			
+			if(combingonum>=M)
+			{
+				printf("컴퓨터가 이겼습니다.");	
+				printf("%d번째에 승리했습니다",turn);
+				break; 
+			}
+			
 		}
-
     
 }

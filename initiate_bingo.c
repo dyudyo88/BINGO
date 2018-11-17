@@ -3,7 +3,7 @@
 #include <time.h>
 
 #define N 4   // NxN bingo game
-#define M 2
+#define M 1
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
