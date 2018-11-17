@@ -41,10 +41,12 @@ int count_bingo(int arr[N][N],int bingonumber)
 			} 
 	}
 // 3. 대각선 빙고 확인(1)
-/*	sum=0;
-	
+
+	sum=0;
+	 
 	for(i=0;i<N;i++)
 	{
+		sum=0;
 		sum+=arr[i][i]; 		//최종 sum이 0이면 빙고 
 			
 			if(sum==0)
@@ -53,10 +55,10 @@ int count_bingo(int arr[N][N],int bingonumber)
 			} 
 	} 	
 // 4. 대각선 빙고 확인(1)
-	sum=0;
+
 	
 	for(i=0;i<N;i++)
-	{
+	{	
 		sum+=arr[N-i][i]; 		//최종 sum이 0이면 빙고 
 			
 			if(sum==0)
@@ -64,7 +66,7 @@ int count_bingo(int arr[N][N],int bingonumber)
 				bingonum++;		//빙고이면 +1 증가 시켜주기
 			}
 	}
-	*/
+
 	
 	bingonumber=bingonum;
 	return bingonumber; //main함수에서 사용하기 위해 bingonumber 반환해주기  

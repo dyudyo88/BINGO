@@ -21,4 +21,3 @@ int get_number_byMe(void);								//사용자가 빙고번호 선택
 int get_number_byCom(void);								//컴퓨터가 빙고번호 선택  
 int process_bingo(int num);								//선택된 숫자를 입력받아서 빙코테이블의 칸을 채움  
 int count_bingo(int arr[N][N], int bingonumber);		//빙고된 가로,세로,대각선의 줄 수를 계산해서 반환 
-
