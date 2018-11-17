@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 5   // NxN bingo game
-#define M 3 
+#define N 4   // NxN bingo game
+#define M 2 
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -26,6 +26,7 @@ int process_bingo(int num)
 				{
 					arr1[i][j]=0; //선택한 숫자가 0으로 바뀜  	
 				}
+				
 				
 				if(arr2[i][j]==num) //get number_byCom에서 입력받은 수  
 				{

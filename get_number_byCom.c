@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 5   // NxN bingo game
-#define M 3 
+#define N 4   // NxN bingo game
+#define M 2 
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 
@@ -14,31 +14,26 @@ int num;
 
 
 
-int get_number_byCom(int x[N][N])
+int get_number_byCom(int num)
 {	
 	int i,j;
 	num = 1 + (rand() % ((N)*(N)));
+	int array[N*N];
+	int arr[N][N];
 	
-	
-	while(1) //중복확인  
+
+	while(1)
 	{
-		for(i=0;i<N;i++)
+	
+		if(array[num]=0)
 		{
-			for(j=0;j<N;j++)						
-			{
-				if(x[i][j]==num)
-				{	
-					return 0;
-				}
-
-				else
-				{	
-					return 1;
-				}
-			}
+			arr[N][N]=num;
+			array[num] =1;
 		}
-	}
+		break;
 
+	}
+	
 	return num;
 } 
 
