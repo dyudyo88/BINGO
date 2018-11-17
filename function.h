@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 4   // NxN bingo game
-#define M 1   //M개의 빙고를 하면 게임을 이김  
+#define N 5   // NxN bingo game
+#define M 2   //M개의 빙고를 하면 게임을 이김  
 #define OVERLAPED 1
 #define UNOVERLAPED 0
 

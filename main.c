@@ -37,24 +37,25 @@ int main(void)
 			
 			
 				
-			if(userbingonumber==M) 								//사용자의 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			if(userbingonumber>=M) //사용자의 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력 (빙고가 동시에 여러개 나올 수 있으므로 빙고수는 M보다 크거나 같을 수 있다)
 			{
 				printf("사용자가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
-				break; 
+				break; 	//무한루프 빠져 나오기 	
 			}
 			
-			else if(combingonumber==M)							//컴퓨터 빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			else if(combingonumber>=M )//컴퓨터 빙고 수가 M보다 크거나  게임을 끝내고 출력  
 			{
 				printf("컴퓨터가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
-				break; 
+				break; //무한루프 빠져 나오기
 			}
 			
-			else if(userbingonumber==M && combingonumber==M )		//사용자와 컴퓨터의  빙고 수가 M보다 크거나 같으면 게임을 끝내고 출력  
+			else if(userbingonumber==M && combingonumber==M )//사용자와 컴퓨터의  빙고 수가 M과  같으면 게임을 끝내고 출력  
 			{
 				printf("비겼습니다.");
 				printf("%d번째에 비겼습니다.", turn);
+				break; //무한루프 빠져 나오기
 			}
 
 		}
