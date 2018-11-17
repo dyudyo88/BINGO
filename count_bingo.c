@@ -1,17 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define N 4   // NxN bingo game
-#define M 2
-#define OVERLAPED 1
-#define UNOVERLAPED 0
+#include "function.h"
 
 extern int arr1[N][N];
 extern int arr2[N][N];
-int row, col;
-int num;
-
 
 int count_bingo(int arr[N][N],int bingonumber)
 {	
@@ -62,33 +52,35 @@ int count_bingo(int arr[N][N],int bingonumber)
 	//3.대각선 빙고 확인  
 	
 	
+	/*
+	sum=0;
 	
 	for(i=0;i<N;i++)
 	{
-		sum+=arr[i][i]; //최종 sum이 0이면 빙고 
+		sum+=arr[i][i]; 		//최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{
 				bingonum++;
 			} 
 	} 
+	
+
 		 
-
-
+	sum=0;
 	
 	for(i=0;i<N;i++)
 	{
-		sum+=arr[N-i][i]; //최종 sum이 0이면 빙고 
+		sum+=arr[N-i][i]; 		//최종 sum이 0이면 빙고 
 			
 			if(sum==0)
 			{	
 				bingonum++;
 			}
 	}
-	
+	*/
 	
 	bingonumber=bingonum;
-
 	return bingonumber;
 	
 }

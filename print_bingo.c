@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define N 4   // NxN bingo game
-#define M 2
-#define OVERLAPED 1
-#define UNOVERLAPED 0
-
-int row, col;
-int num;
+#include "function.h"
 
 void print_bingo(int arr[N][N])
 {	
