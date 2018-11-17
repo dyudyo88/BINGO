@@ -16,8 +16,8 @@ int row, col;
 void initiate_bingo(int arr[N][N]); 					//빙고테이블 초기에 만듦  
 void print_bingo(int arr[N][N]);						//빙고테이블의 현재 상황을 화면에 출력
 int check(int arr[N][N], int row, int col);				//빙고테이블에 숫자 랜덤으로 배치할 때 중복되는지 확인
-int get_number_byMe(int num);							//사용자가 빙고번호 선택  
-//int get_number_byCom(int num);							//컴퓨터가 빙고번호 선택  
+int get_number_byMe(int arr);							//사용자가 빙고번호 선택  
+int get_number_byCom(int arr);							//컴퓨터가 빙고번호 선택  
 int process_bingo(int num);								//선택된 숫자를 입력받아서 빙코테이블의 칸을 채움  
 int count_bingo(int bingonum,int arr[N][N]);						//빙고된 가로,세로,대각선의 줄 수를 계산해서 반환 
 
@@ -27,7 +27,7 @@ int count_bingo(int bingonum,int arr[N][N]);						//빙고된 가로,세로,대각선의 줄
 int main(void)
 {	
 
-	printf("---------START BINGO GAME----------\n");
+	printf("-----------START BINGO GAME-------------\n");
     int arr[N][N]={0};      //배열 선언 및 초기화  
 	int num;
 	int bingonum;
@@ -42,10 +42,11 @@ int main(void)
     
     while(1)
 	{	
-		num = get_number_byMe(num);
+		num = get_number_byMe(arr1); 
 		process_bingo(num);
-			
-		get_number_byCom(num);
+		
+		num = get_number_byCom(arr1);
+		printf("컴퓨터가 %d를 선택했습니다.\n",num);
 		process_bingo(num);
 		
 		count_bingo(bingonum,arr1);

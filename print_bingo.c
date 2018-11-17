@@ -19,7 +19,7 @@ void print_bingo(int arr[N][N])
    {
       for (col=0; col <N; col++)
 	  {
-        printf("%d\t", arr[row][col]);      //출력
+        printf("%5d\t", arr[row][col]);      //출력
       }
       printf("\n\n");                     //가로줄 다쓰면 줄내림
    }

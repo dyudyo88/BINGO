@@ -14,7 +14,7 @@ int num;
 int cnum;
 
 
-int get_number_byMe(void)
+int get_number_byMe(int y[N][N])
 {
 	int i,j;
 	int flag = 0;
@@ -30,6 +30,7 @@ int get_number_byMe(void)
 			flag=1; //깃발 들기->처음으로 돌아감 	
 		}
 		
+		
 		else //1~NxN 범위 사이의 숫자를 입력했을 때  
 		{	
 			flag=1;
@@ -37,7 +38,7 @@ int get_number_byMe(void)
 			{
 				for(j=0;j<N;j++)
 				{	
-					if((arr1[i][j]==num) || (arr2[i][j]==num) )
+					if(y[i][j]==num)
 					{	
 						flag=0;
 						break;
@@ -57,6 +58,5 @@ int get_number_byMe(void)
 	printf("\n");	
 	return num;
 
-	
 }
 
