@@ -28,15 +28,15 @@ int count_bingo(int arr[N][N],int bingonum)
 	{
 		sum=0;
 		
+		if(sum==0)
+			{
+				bingonum++;
+			} 
+			
+		
 		for(j=0;j<N;j++)
 		{
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
-			
-			if(sum==0)
-			{
-				bingonum++;
-				return 0;
-			} 
 		}
 	}
 	
@@ -47,16 +47,16 @@ int count_bingo(int arr[N][N],int bingonum)
 	for(j=0;j<N;j++)
 	{	
 		sum=0;
+		if(sum==0)
+			{
+				bingonum++;
+			} 
+			
+			
 		
 		for(i=0;i<N;i++)
 		{
 			sum+=arr[i][j]; //최종 sum이 0이면 빙고 
-			
-			if(sum==0)
-			{
-				bingonum++;
-				return 0;
-			} 
 		}
 	}
 	
@@ -72,7 +72,6 @@ int count_bingo(int arr[N][N],int bingonum)
 			if(sum==0)
 			{
 				bingonum++;
-				return 0;
 			} 
 	} 
 		 
@@ -86,7 +85,6 @@ int count_bingo(int arr[N][N],int bingonum)
 			if(sum==0)
 			{	
 				bingonum++;
-				return 0;
 			}
 	}
 	

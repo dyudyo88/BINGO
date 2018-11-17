@@ -47,7 +47,6 @@ int main(void)
 			process_bingo(num);
 			
 			num = get_number_byCom();
-			printf("컴퓨터가 %d를 선택했습니다.\n",num);
 			process_bingo(num);
 			
 			turn++;
@@ -58,7 +57,7 @@ int main(void)
 			userbingonum = count_bingo(arr1,bingonum);
 			combingonum = count_bingo(arr2,bingonum);	
 			
-		/*	if(userbingonum>=M)
+			if(userbingonum>=M)
 			{
 				printf("사용자가 이겼습니다.");	
 				printf("%d번째에 승리했습니다",turn);
@@ -71,7 +70,8 @@ int main(void)
 				printf("%d번째에 승리했습니다",turn);
 				break; 
 			}
-		*/
+
 		}
+		
     
 }
