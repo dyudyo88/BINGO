@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 4   // NxN bingo game
+#define N 5   // NxN bingo game
 #define M 1
 #define OVERLAPED 1
 #define UNOVERLAPED 0
@@ -14,7 +14,7 @@ int num;
 int cnum;
 
 
-int get_number_byMe(int y[N][N])
+int get_number_byMe(void)
 {
 	int i,j;
 	int flag = 0;
@@ -39,7 +39,7 @@ int get_number_byMe(int y[N][N])
 			{
 				for(j=0;j<N;j++)
 				{	
-					if(y[i][j]==num)
+					if(arr1[i][j]==num)
 					{	
 						flag=0;
 						break;
