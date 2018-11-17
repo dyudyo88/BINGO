@@ -34,6 +34,7 @@ int get_number_byMe(int y[N][N])
 		else //1~NxN 범위 사이의 숫자를 입력했을 때  
 		{	
 			flag=1;
+			
 			for(i=0;i<N;i++)
 			{
 				for(j=0;j<N;j++)
@@ -45,8 +46,7 @@ int get_number_byMe(int y[N][N])
 					}
 				}
 			}	
-			
-			
+
 			if (flag == 1)
 			{
 				printf("선택했던 숫자 입니다. 다시 입력하세요.\n");

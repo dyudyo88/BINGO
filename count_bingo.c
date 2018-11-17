@@ -66,7 +66,7 @@ int count_bingo(int bingonum,int arr[N][N])
 			if(sum==0)
 			{
 				bingonum++;
-			 } 
+			} 
 	} 
 		 
 
@@ -78,7 +78,7 @@ int count_bingo(int bingonum,int arr[N][N])
 			if(sum==0)
 			{	
 				bingonum++;
-			 }
+			}
 	}
 	
 	

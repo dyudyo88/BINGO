@@ -55,11 +55,9 @@ int main(void)
 		
 		print_bingo(arr1);  	     //사용자 빙고판 출력
    		print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
-		
-		
+				
 	}
-	
- 
+
     return 0;
 }
 

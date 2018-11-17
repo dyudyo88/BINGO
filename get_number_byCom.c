@@ -8,6 +8,7 @@
 #define UNOVERLAPED 0
 
 
+
 int row, col;
 int num;
 
@@ -25,14 +26,13 @@ int get_number_byCom(int x[N][N])
 		{
 			for(j=0;j<N;j++)						
 			{
-				
 				if(x[i][j]==num)
 				{	
 					return 0;
 				}
-				
+
 				else
-				{
+				{	
 					return 1;
 				}
 			}
