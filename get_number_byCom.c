@@ -13,7 +13,6 @@ int row, col;
 int num;
 
 
-
 int get_number_byCom(int num)
 {	
 	int i,j;
@@ -25,13 +24,13 @@ int get_number_byCom(int num)
 	while(1)
 	{
 	
-		if(array[num]=0)
+		if(array[num]==0)
 		{
-			arr[N][N]=num;
-			array[num] =1;
+			arr[N][N] = num;
+			array[num] = 1;
 		}
+		
 		break;
-
 	}
 	
 	return num;

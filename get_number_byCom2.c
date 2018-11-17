@@ -13,27 +13,28 @@ int row, col;
 int num;
 
 
-
-int get_number_byCom2(int num)
+int get_number_byCom2(int x[N][N])
 {	
 	int i,j;
 	num = 1 + (rand() % ((N)*(N)));
-	int array[N*N];
-	int arr[N][N];
-	
 
-	while(1)
-	{
-	
-		if(array[num]=0)
-		{
-			arr[N][N]=num;
-			array[num] =1;
-		}
-		break;
+	 for(i=0;i<N;i++)
+      {
+         for(j=0;j<N;j++)                  
+         {
+            if(x[i][j]==num)
+            {   
+               return 0;
+            }
 
-	}
-	
+            else
+            {   
+               return 1;
+            }
+         }
+      }
+   
+
 	return num;
 } 
 
