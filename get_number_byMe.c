@@ -27,7 +27,7 @@ int get_number_byMe(void)
 			{
 				for(j=0;j<N;j++)
 				{	
-					if(arr1[i][j]==num) // 중복해서 선택을 하면 다시 처음으로 되돌아가도록 함. 
+					if(arr1[i][j]==num) //입력한 숫자가 중복이 아니면 종료  
 					{	
 						flag=0;
 						break;
