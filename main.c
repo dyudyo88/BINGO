@@ -2,7 +2,6 @@
 
 int main(void)
 {	
-
 	int arr[N][N]={0};      //배열 선언 및 초기화  
 	int userbingonumber;	//사용자의 빙고 수
 	int combingonumber;		//컴퓨터의 빙고수
@@ -62,7 +61,5 @@ int main(void)
 				break; //무한루프 빠져 나오기
 			}
 
-		}
-		
-    
+		}   
 }
