@@ -15,7 +15,6 @@ int main(void)
 	initiate_bingo(arr1);		//사용자 빙고판 생성
 	initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
     print_bingo(arr1);         	//사용자 빙고판 출력 
-	print_bingo(arr2); 			//컴퓨터 빙고판 출력  
     
    	 while(1)
 		{
@@ -28,7 +27,6 @@ int main(void)
 			turn++; 					//몇 번째에 승부가 결정나는지 알려주도록 하는 것 
 	
 			print_bingo(arr1);  	   	//사용자 빙고판 출력
-   			print_bingo(arr2); 			//컴퓨터 빙고판인데 지우기 
 				
 			userbingonumber = count_bingo(arr1, bingonumber);			//사용자의 빙고 수 입력받기 
 			printf("사용자가 %d bingo 했습니다.\n", userbingonumber); 	//사용자의 빙고 수가 몇 인지 출력  
@@ -41,6 +39,8 @@ int main(void)
 			{
 				printf("사용자가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
+				printf("컴퓨터의 빙고판\n");
+				print_bingo(arr2); //컴퓨터 빙고판 출력  
 				break; 	//무한루프 빠져 나오기 	
 			}
 			
@@ -48,6 +48,8 @@ int main(void)
 			{
 				printf("컴퓨터가 이겼습니다.\n");	
 				printf("%d번째에 승리했습니다.\n",turn);
+				printf("컴퓨터의 빙고판\n");
+				print_bingo(arr2); //컴퓨터 빙고판 출력  
 				break; //무한루프 빠져 나오기
 			}
 			
@@ -55,6 +57,8 @@ int main(void)
 			{
 				printf("비겼습니다.");
 				printf("%d번째에 비겼습니다.", turn);
+				printf("컴퓨터의 빙고판\n");
+				print_bingo(arr2); //컴퓨터 빙고판 출력  
 				break; //무한루프 빠져 나오기
 			}
 

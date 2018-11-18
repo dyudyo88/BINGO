@@ -14,12 +14,11 @@ int count_bingo(int arr[N][N],int bingonumber)
 
 	for(i=0;i<N;i++)
 	{	
-		printf("a");
 		sum += arr[N-1-i][i]; 		//최종 sum이 0이면 빙고 
 	}
-		printf("c"); 
+	
 	if(sum==0)
-		{	printf("b");
+		{
 			bingonum++;		//빙고이면 +1 증가 시켜주기
 		}
 	
