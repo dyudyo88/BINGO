@@ -10,7 +10,7 @@ int main(void)
 	 
 	srand((unsigned int)time(NULL));   //난수
 	
-	printf("-----------START BINGO GAME-------------\n");
+	printf("-----------START BINGO GAME-------------\n\n\n\n");
 	initiate_bingo(arr1);		//사용자 빙고판 생성
 	initiate_bingo(arr2);		//컴퓨터 빙고판 생성  
     print_bingo(arr1);         	//사용자 빙고판 출력 
@@ -52,7 +52,7 @@ int main(void)
 				break; //무한루프 빠져 나오기
 			}
 			
-			else if(userbingonumber==M && combingonumber==M )//사용자와 컴퓨터의  빙고 수가 M과  같으면 게임을 끝내고 출력  
+			else if(userbingonumber>=M && combingonumber>=M )//사용자와 컴퓨터의  빙고 수가 M과  같으면 게임을 끝내고 출력  
 			{
 				printf("비겼습니다.");
 				printf("%d번째에 비겼습니다.", turn);
