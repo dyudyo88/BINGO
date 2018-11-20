@@ -14,9 +14,9 @@ void initiate_bingo(int arr[N][N])
             	check = check_overlap(arr,row,col);         // 중복 체크-> 중복있으면 1 , 중복없으면 0 
             	if (!check)                           		// 중복 없으면 무한루프 탈출 및 다음 배열로 넘어감
                	break;
-         }
-      }
-   }
+         	}
+      	}
+   	}
 }
 
 

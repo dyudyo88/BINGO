@@ -5,12 +5,11 @@ extern int arr2[N][N];
 
 int count_bingo(int arr[N][N],int bingonumber)
 {
-// 빙고한 줄의 sum이 0이면 bingonum을 +1 증가시켜서 몇 줄 빙고를 했는지 알아내는 함수  	
+// 빙고한 줄의 sum이 0이면 bingonum을 1만큼  증가시켜서 몇 줄 빙고를 했는지 알아내기  
 	int sum=0;			 
 	int bingonum=0;		
 		
 //1. 대각선 빙고 확인
-
 
 	for(i=0;i<N;i++)
 	{	
@@ -21,6 +20,7 @@ int count_bingo(int arr[N][N],int bingonumber)
 		{
 			bingonum++;		//빙고이면 +1 증가 시켜주기
 		}
+		
 	
 	sum=0;
 	
@@ -31,11 +31,10 @@ int count_bingo(int arr[N][N],int bingonumber)
 	
 	if(sum==0)
 	{	
-		bingonum++;				//빙고면 +1 증가 시켜주기  
+		bingonum++;				//빙고면 1 증가 시켜주기  
 	}	
 
 	
-
 // 2. 세로줄  빙고 확인
 
 	for(i=0;i<N;i++)
@@ -49,7 +48,7 @@ int count_bingo(int arr[N][N],int bingonumber)
 		
 		if(sum==0)
 			{
-				bingonum++;	//빙고이면 +1 증가 시켜주기  
+				bingonum++;	//빙고이면 81 증가 시켜주기  
 			} 
 	}
 	
