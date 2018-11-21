@@ -6,7 +6,7 @@ int main(void)
 	int userbingonumber;	//사용자의 빙고 수
 	int combingonumber;		//컴퓨터의 빙고수
 	int bingonumber;
-	int turn;
+	int turn;				//승부가 결정날 때까지 turn한 수  
 	 
 	srand((unsigned int)time(NULL));   //난수
 	

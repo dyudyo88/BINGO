@@ -1,7 +1,7 @@
 #include "function.h"
 
-extern int arr1[N][N];
-extern int arr2[N][N];
+extern int arr1[N][N];	// 사용자 빙고판배열을  해당 파일에서 사용할 수 있게 함
+extern int arr2[N][N];	// 컴퓨터  빙고판배열을  해당 파일에서 사용할 수 있게 함 
 
 //컴퓨터가 빙고번호 선택  
 int get_number_byCom(void)
@@ -32,12 +32,12 @@ int get_number_byCom(void)
 		
 		if (flag == 1) //컴퓨터가 입력한 숫자가 중복이면 숫자를 다시 받음 										 
 		{
-			printf("ERROR! 컴퓨터가 선택했던 숫자를 선택했습니다. 다시 선택합니다. \n");	//함수의 처음으로 되돌아감
-			continue;
+			printf("ERROR! 컴퓨터가 선택했던 숫자를 선택했습니다. 다시 선택합니다. \n");
+			continue;	//함수의 처음으로 되돌아감
 		}	
 		
 	}while(flag==1);
 	printf("\n\n");
-	return num;
+	return num;	//num을 리턴해줌으로써 process_bingo.c에 사용자가 입력한 값을 전달한다. 
 }
 

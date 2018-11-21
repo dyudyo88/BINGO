@@ -1,8 +1,9 @@
 #include "function.h"
 
-extern int arr1[N][N];
-extern int arr2[N][N];
+extern int arr1[N][N];	// 사용자 빙고판배열을  해당 파일에서 사용할 수 있게 함
+extern int arr2[N][N];	// 컴퓨터  빙고판배열을  해당 파일에서 사용할 수 있게 함 
 
+//빙고된 가로,세로,대각선의 줄 수를 계산해서 반환
 int count_bingo(int arr[N][N],int bingonumber)
 {
 // 빙고한 줄의 sum이 0이면 bingonum을 1만큼  증가시켜서 몇 줄 빙고를 했는지 알아내기  

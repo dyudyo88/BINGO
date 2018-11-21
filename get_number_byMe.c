@@ -1,9 +1,9 @@
 #include "function.h"
 
-extern int arr1[N][N];
-extern int arr2[N][N];
+extern int arr1[N][N];	// 사용자 빙고판배열을  해당 파일에서 사용할 수 있게 함 
+extern int arr2[N][N];	// 컴퓨터  빙고판배열을  해당 파일에서 사용할 수 있게 함 
 
-//사용자가 빙고번호 선택 
+//사용자의 빙고 번호 선택 
 int get_number_byMe(void)
 {
 	int flag = 0;
@@ -16,7 +16,7 @@ int get_number_byMe(void)
 		if(num<1||num>N*N) 							//사용자가 범위 밖의 숫자를 선택했을 때 
 		{	
 			printf("1~%d 사이의 숫자를 입력해야합니다.",N*N);	
-			flag=1; 								//깃발 들기->처음으로 돌아감 	
+			flag=1; 	//깃발 들기->처음으로 돌아감 	
 		}
 		
 		else 	//사용자가 범위안의 숫자를 입력했을 때  
@@ -44,6 +44,6 @@ int get_number_byMe(void)
 	}while(flag == 1); //flag가 0이면 탈출 
 
 	printf("\n");	
-	return num;  
+	return num;	//num을 리턴해줌으로써 process_bingo.c에 사용자가 입력한 값을 전달한다.   
 }
 

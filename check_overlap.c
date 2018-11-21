@@ -12,7 +12,7 @@ int check_overlap(int arr[N][N], int row, int col)
 	  {      
          if ((i==row)&&(j==col)) 				//자기자신이면 넘어가기  
             return UNOVERLAPED;
-         else if (arr[i][j] == arr[row][col]) 	//숫자 겹치면 다시 돌아가기  
+         else if (arr[i][j] == arr[row][col]) 	//숫자 겹치면(중복되면) 처음으로 다시 돌아가기  
             return OVERLAPED;           
       }
    }
